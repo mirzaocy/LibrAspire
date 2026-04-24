@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" role="img" aria-labelledby="title desc">
+  <title id="title">Clean Code cover</title>
+  <desc id="desc">Ilustrasi cover buku Clean Code</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d5fff5"/>
+      <stop offset="100%" stop-color="#48bfa0"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="420" rx="28" fill="url(#bg)"/>
+  <rect x="46" y="64" width="208" height="208" rx="28" fill="rgba(255,255,255,0.3)"/>
+  <path d="M82 172h44m18 0h74M82 138h136M82 206h108" stroke="#11594b" stroke-width="12" stroke-linecap="round"/>
+  <text x="42" y="320" fill="#0d4037" font-family="Georgia, serif" font-size="44" font-weight="700">CLEAN</text>
+  <text x="42" y="362" fill="#0d4037" font-family="Georgia, serif" font-size="44" font-weight="700">CODE</text>
+  <text x="42" y="396" fill="#165a4d" font-family="Segoe UI, Arial, sans-serif" font-size="18">ROBERT C. MARTIN</text>
+</svg>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibrAspire | Catalog</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="site-page catalog-page" data-auth-mode="backend">
+    <div class="site-shell">
+        <header class="site-header">
+            <div class="site-header__top">
+                <div>
+                    <p class="site-eyebrow">Frontend Reading Space</p>
+                    <h1 class="site-title">LibrAspire</h1>
+                </div>
+                <div class="auth-actions" data-auth-panel>
+                    <p class="auth-greeting" data-auth-greeting>Belum login</p>
+                    <button class="secondary-button auth-button" type="button" data-open-login>Login</button>
+                    <button class="secondary-button auth-button" type="button" data-logout hidden>Logout</button>
+                </div>
+            </div>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a class="site-nav__link" href="home.html">Home</a>
+                <a class="site-nav__link is-active" href="catalog.html" aria-current="page">Catalog</a>
+                <a class="site-nav__link" href="contact.html">Contact</a>
+            </nav>
+            <p class="site-tagline">
+                Jelajahi koleksi lokal, buka halaman detail setiap buku, lalu lanjutkan eksplorasi ke referensi eksternal
+                melalui area discovery async.
+            </p>
+            <p class="mode-hint" data-auth-mode-note></p>
+        </header>
+
+        <main class="page-main">
+            <section class="panel">
+                <div class="section-heading">
+                    <p class="section-kicker">Library Catalogue</p>
+                    <h2 class="section-title">Koleksi Utama LibrAspire</h2>
+                    <p class="section-text">Gunakan pencarian, filter status, dan tautan detail untuk melihat bagaimana satu sumber data dipakai di beberapa tampilan.</p>
+                </div>
+
+                <form class="search-row search-form" action="catalog.html" method="get" data-search-form="catalog">
+                    <input class="search-input" type="text" id="catalog-search" name="search" placeholder="Cari judul, penulis, atau kategori..." aria-label="Cari buku" autocomplete="off" data-search-input>
+                    <button class="primary-button" type="submit">Cari</button>
+                </form>
+
+                <div class="catalog-tools">
+                    <div class="filter-group" role="group" aria-label="Filter status buku">
+                        <button class="filter-chip is-selected" type="button" data-status-filter="all">Semua</button>
+                        <button class="filter-chip" type="button" data-status-filter="available">Available</button>
+                        <button class="filter-chip" type="button" data-status-filter="borrowed">Borrowed</button>
+                        <button class="filter-chip" type="button" data-status-filter="unavailable">Unavailable</button>
+                    </div>
+                    <button class="text-button" type="button" data-clear-filters hidden>Tampilkan semua buku</button>
+                </div>
+
+                <p class="catalog-summary" data-catalog-summary>Menampilkan semua buku.</p>
+
+                <div class="book-grid" data-book-grid></div>
+
+                <p class="catalog-empty" data-empty-state hidden>Tidak ada buku yang cocok dengan pencarian atau filter saat ini.</p>
+            </section>
+
+            <section class="panel">
+                <div class="section-heading">
+                    <p class="section-kicker">Async Discovery</p>
+                    <h2 class="section-title">Cari Referensi Buku dari API Eksternal</h2>
+                    <p class="section-text">
+                        Bagian ini menerapkan konsep data fetching: ketik topik, kirim request async, lalu tampilkan loading,
+                        empty state, atau hasil buku eksternal secara rapi.
+                    </p>
+                </div>
+
+                <form class="search-row search-form" data-discovery-form novalidate>
+                    <input class="search-input" type="text" name="discovery" placeholder="Contoh: frontend development, react design, clean architecture" aria-label="Cari referensi eksternal" autocomplete="off" data-discovery-input value="frontend development">
+                    <button class="primary-button" type="submit">Muat Referensi</button>
+                </form>
+
+                <div class="catalog-tools catalog-tools--stack">
+                    <p class="catalog-summary" data-discovery-summary hidden></p>
+                    <button class="text-button" type="button" data-discovery-reset hidden>Kembali ke pencarian awal</button>
+                </div>
+
+                <p class="form-feedback" data-discovery-feedback hidden></p>
+                <div class="book-grid discovery-grid" data-discovery-grid></div>
+                <p class="catalog-empty" data-discovery-empty hidden>Belum ada hasil untuk kata kunci tersebut. Coba kata kunci lain.</p>
+            </section>
+
+            <section class="panel">
+                <div class="section-heading">
+                    <p class="section-kicker">Category Snapshot</p>
+                    <h2 class="section-title">Ringkasan Kategori Lokal</h2>
+                    <p class="section-text">Kategori berikut dihitung langsung dari data buku lokal, jadi jumlah judul dan ketersediaannya ikut berubah saat dataset berkembang.</p>
+                </div>
+                <div class="overview-grid" data-category-overview></div>
+            </section>
+        </main>
+    </div>
+
+    <div class="auth-modal" data-auth-modal hidden>
+        <div class="auth-modal__backdrop" data-close-login></div>
+        <div class="auth-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="login-title">
+            <div class="auth-modal__header">
+                <div>
+                    <p class="section-kicker">Account Access</p>
+                    <h2 class="auth-modal__title" id="login-title">Masuk ke LibrAspire</h2>
+                </div>
+                <button class="icon-button" type="button" aria-label="Tutup login" data-close-login>&times;</button>
+            </div>
+            <p class="section-text">Masuk untuk meminjam buku, menyimpan progres, dan mengirim pesan dengan lebih cepat.</p>
+            <p class="mode-hint mode-hint--modal" data-auth-mode-note></p>
+            <form class="auth-form" data-login-form novalidate>
+                <div class="form-field">
+                    <label class="form-label" for="login-name">Nama</label>
+                    <input class="form-input" type="text" id="login-name" name="loginName" placeholder="Nama lengkap" autocomplete="name">
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="login-email">Email</label>
+                    <input class="form-input" type="email" id="login-email" name="loginEmail" placeholder="nama@email.com" autocomplete="email" required>
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="login-password">Password</label>
+                    <input class="form-input" type="password" id="login-password" name="loginPassword" placeholder="Minimal 6 karakter" autocomplete="current-password" required>
+                </div>
+                <div class="auth-form__actions">
+                    <button class="primary-button" type="submit">Login</button>
+                    <button class="secondary-button secondary-button--surface" type="button" data-register-submit>Buat Akun</button>
+                </div>
+                <p class="auth-note">Isi nama, email, dan password untuk membuat akun baru jika belum terdaftar.</p>
+                <p class="form-feedback" data-login-feedback hidden></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

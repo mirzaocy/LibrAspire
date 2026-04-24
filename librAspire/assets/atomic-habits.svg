@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" role="img" aria-labelledby="title desc">
+  <title id="title">Atomic Habits cover</title>
+  <desc id="desc">Ilustrasi cover buku Atomic Habits</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7d774"/>
+      <stop offset="100%" stop-color="#f0b44d"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="420" rx="28" fill="url(#bg)"/>
+  <circle cx="150" cy="118" r="64" fill="rgba(255,255,255,0.34)"/>
+  <circle cx="150" cy="118" r="36" fill="#fff3c6"/>
+  <text x="34" y="242" fill="#5f3b00" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">JAMES CLEAR</text>
+  <text x="34" y="292" fill="#3d2400" font-family="Georgia, serif" font-size="42" font-weight="700">ATOMIC</text>
+  <text x="34" y="334" fill="#3d2400" font-family="Georgia, serif" font-size="42" font-weight="700">HABITS</text>
+  <text x="34" y="378" fill="#5f3b00" font-family="Segoe UI, Arial, sans-serif" font-size="18">Tiny changes, remarkable results</text>
+</svg>

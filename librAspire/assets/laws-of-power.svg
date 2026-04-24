@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" role="img" aria-labelledby="title desc">
+  <title id="title">10 Laws of Power cover</title>
+  <desc id="desc">Ilustrasi cover buku 10 Laws of Power</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2f3036"/>
+      <stop offset="100%" stop-color="#111216"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="420" rx="28" fill="url(#bg)"/>
+  <rect x="34" y="40" width="232" height="340" rx="18" fill="none" stroke="#c7a048" stroke-width="3"/>
+  <text x="48" y="116" fill="#f7d89a" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700">10</text>
+  <text x="48" y="182" fill="#ffffff" font-family="Georgia, serif" font-size="34" font-weight="700">LAWS</text>
+  <text x="48" y="224" fill="#ffffff" font-family="Georgia, serif" font-size="34" font-weight="700">OF POWER</text>
+  <text x="48" y="292" fill="#d7c8a2" font-family="Segoe UI, Arial, sans-serif" font-size="18">ROBERT GREENE</text>
+  <text x="48" y="340" fill="#c7a048" font-family="Segoe UI, Arial, sans-serif" font-size="16">Strategy and influence</text>
+</svg>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibrAspire | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="site-page home-page" data-auth-mode="backend">
+    <div class="site-shell">
+        <header class="site-header">
+            <div class="site-header__top">
+                <div>
+                    <p class="site-eyebrow">Frontend Reading Space</p>
+                    <h1 class="site-title">LibrAspire</h1>
+                </div>
+                <div class="auth-actions" data-auth-panel>
+                    <p class="auth-greeting" data-auth-greeting>Belum login</p>
+                    <button class="secondary-button auth-button" type="button" data-open-login>Login</button>
+                    <button class="secondary-button auth-button" type="button" data-logout hidden>Logout</button>
+                </div>
+            </div>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a class="site-nav__link is-active" href="home.html" aria-current="page">Home</a>
+                <a class="site-nav__link" href="catalog.html">Catalog</a>
+                <a class="site-nav__link" href="contact.html">Contact</a>
+            </nav>
+            <p class="site-tagline">
+                Versi LibrAspire ini menerapkan ide dari modul frontend: kartu yang reusable, state peminjaman interaktif,
+                halaman detail berbasis URL, dan penemuan buku secara async.
+            </p>
+            <p class="mode-hint" data-auth-mode-note></p>
+        </header>
+
+        <main class="page-main">
+            <section class="panel hero-panel">
+                <div class="hero-copy">
+                    <div class="section-heading">
+                        <p class="section-kicker">Mini Project</p>
+                        <h2 class="section-title">Belajar alur frontend modern lewat perpustakaan digital</h2>
+                        <p class="section-text">
+                            Cari buku, buka detailnya, pinjam dengan status yang berubah real-time, lalu eksplor referensi
+                            tambahan dari API buku eksternal di halaman katalog.
+                        </p>
+                    </div>
+
+                    <form class="search-row search-form" action="catalog.html" method="get" data-search-form="redirect">
+                        <input class="search-input" type="text" id="home-search" name="search" placeholder="Cari judul, penulis, atau kategori..." aria-label="Cari buku" autocomplete="off" data-search-input>
+                        <button class="primary-button" type="submit">Cari Buku</button>
+                    </form>
+
+                    <div class="hero-actions">
+                        <a class="primary-button button-link" href="catalog.html">Jelajahi Katalog</a>
+                        <button class="secondary-button" type="button" data-open-login>Masuk &amp; Pinjam</button>
+                    </div>
+
+                    <div class="metric-grid">
+                        <article class="metric-card">
+                            <strong data-stat-total-books>0</strong>
+                            <span>Buku inti di katalog lokal</span>
+                        </article>
+                        <article class="metric-card">
+                            <strong data-stat-total-categories>0</strong>
+                            <span>Kategori yang dirender dari data</span>
+                        </article>
+                        <article class="metric-card">
+                            <strong data-stat-available-books>0</strong>
+                            <span>Buku yang siap dipinjam sekarang</span>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <article class="mini-card">
+                        <p class="mini-card__label">Reusable Cards</p>
+                        <h3 class="mini-card__title">Satu pola kartu untuk home, katalog, dan related books.</h3>
+                    </article>
+                    <article class="mini-card mini-card--accent">
+                        <p class="mini-card__label">State Borrowing</p>
+                        <h3 class="mini-card__title">Tombol pinjam berubah sesuai status pengguna saat ini.</h3>
+                    </article>
+                    <article class="mini-card">
+                        <p class="mini-card__label">Async Discovery</p>
+                        <h3 class="mini-card__title">Cari referensi tambahan dari API buku langsung di katalog.</h3>
+                    </article>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="section-heading">
+                    <p class="section-kicker">Popular Now</p>
+                    <h2 class="section-title">Pilihan Buku Utama</h2>
+                    <p class="section-text">Bagian ini dirender dari data buku yang sama agar pola UI tetap konsisten di seluruh halaman.</p>
+                </div>
+                <div class="book-grid book-grid--featured" data-featured-grid></div>
+            </section>
+
+            <section class="panel">
+                <div class="section-heading">
+                    <p class="section-kicker">Frontend Flow</p>
+                    <h2 class="section-title">Materi yang Sudah Diterapkan</h2>
+                </div>
+                <div class="learning-grid">
+                    <article class="learning-card">
+                        <h3 class="learning-card__title">Reusable component mindset</h3>
+                        <p class="section-text">Kartu buku lokal dan kartu hasil pencarian eksternal memakai struktur tampilan yang seragam.</p>
+                    </article>
+                    <article class="learning-card">
+                        <h3 class="learning-card__title">State dan interaksi</h3>
+                        <p class="section-text">Status pinjam dan antre berubah tanpa memuat ulang halaman, lalu disinkronkan ke semua tampilan.</p>
+                    </article>
+                    <article class="learning-card">
+                        <h3 class="learning-card__title">Routing berbasis URL</h3>
+                        <p class="section-text">Setiap buku punya halaman detail sendiri lewat parameter URL untuk meniru konsep dynamic route.</p>
+                    </article>
+                    <article class="learning-card">
+                        <h3 class="learning-card__title">Loading dan error state</h3>
+                        <p class="section-text">Detail buku dan discovery API menampilkan kondisi memuat, gagal, atau kosong secara eksplisit.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="section-heading">
+                    <p class="section-kicker">Reading Activity</p>
+                    <h2 class="section-title">Aktivitas Peminjaman Terbaru</h2>
+                    <p class="section-text">Bagian ini mencatat perubahan state pinjam dan antre secara otomatis agar interaksi pengguna terasa lebih nyata.</p>
+                </div>
+                <p class="catalog-summary" data-activity-summary>Belum ada aktivitas tercatat.</p>
+                <div class="activity-list" data-activity-list></div>
+            </section>
+
+            <section class="panel">
+                <div class="section-heading">
+                    <p class="section-kicker">Collections</p>
+                    <h2 class="section-title">Book Categories</h2>
+                    <p class="section-text">Klik kategori untuk langsung membuka katalog dengan filter aktif.</p>
+                </div>
+                <ul class="category-list" data-category-list></ul>
+            </section>
+        </main>
+    </div>
+
+    <div class="auth-modal" data-auth-modal hidden>
+        <div class="auth-modal__backdrop" data-close-login></div>
+        <div class="auth-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="login-title">
+            <div class="auth-modal__header">
+                <div>
+                    <p class="section-kicker">Account Access</p>
+                    <h2 class="auth-modal__title" id="login-title">Masuk ke LibrAspire</h2>
+                </div>
+                <button class="icon-button" type="button" aria-label="Tutup login" data-close-login>&times;</button>
+            </div>
+            <p class="section-text">Masuk untuk meminjam buku, menyimpan progres, dan mengirim pesan dengan lebih cepat.</p>
+            <p class="mode-hint mode-hint--modal" data-auth-mode-note></p>
+            <form class="auth-form" data-login-form novalidate>
+                <div class="form-field">
+                    <label class="form-label" for="login-name">Nama</label>
+                    <input class="form-input" type="text" id="login-name" name="loginName" placeholder="Nama lengkap" autocomplete="name">
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="login-email">Email</label>
+                    <input class="form-input" type="email" id="login-email" name="loginEmail" placeholder="nama@email.com" autocomplete="email" required>
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="login-password">Password</label>
+                    <input class="form-input" type="password" id="login-password" name="loginPassword" placeholder="Minimal 6 karakter" autocomplete="current-password" required>
+                </div>
+                <div class="auth-form__actions">
+                    <button class="primary-button" type="submit">Login</button>
+                    <button class="secondary-button secondary-button--surface" type="button" data-register-submit>Buat Akun</button>
+                </div>
+                <p class="auth-note">Isi nama, email, dan password untuk membuat akun baru jika belum terdaftar.</p>
+                <p class="form-feedback" data-login-feedback hidden></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

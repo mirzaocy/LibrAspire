@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibrAspire | Book Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="site-page book-page" data-auth-mode="backend">
+    <div class="site-shell">
+        <header class="site-header">
+            <div class="site-header__top">
+                <div>
+                    <p class="site-eyebrow">Frontend Reading Space</p>
+                    <h1 class="site-title">LibrAspire</h1>
+                </div>
+                <div class="auth-actions" data-auth-panel>
+                    <p class="auth-greeting" data-auth-greeting>Belum login</p>
+                    <button class="secondary-button auth-button" type="button" data-open-login>Login</button>
+                    <button class="secondary-button auth-button" type="button" data-logout hidden>Logout</button>
+                </div>
+            </div>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a class="site-nav__link" href="home.html">Home</a>
+                <a class="site-nav__link is-active" href="catalog.html" aria-current="page">Catalog</a>
+                <a class="site-nav__link" href="contact.html">Contact</a>
+            </nav>
+            <p class="site-tagline">
+                Halaman ini meniru konsep dynamic route dengan membaca parameter URL, lalu menampilkan loading, error,
+                atau detail buku yang sesuai.
+            </p>
+            <p class="mode-hint" data-auth-mode-note></p>
+        </header>
+
+        <main class="page-main">
+            <section class="panel detail-panel">
+                <div class="detail-feedback detail-feedback--loading" data-detail-loading>
+                    <div class="skeleton-line skeleton-line--wide"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line skeleton-line--short"></div>
+                </div>
+                <p class="form-feedback" data-detail-error hidden></p>
+                <div data-book-detail-view hidden></div>
+            </section>
+
+            <section class="panel" data-related-section hidden>
+                <div class="section-heading">
+                    <p class="section-kicker">Related Reads</p>
+                    <h2 class="section-title">Buku Terkait</h2>
+                    <p class="section-text">Kartu di bawah juga memakai pola reusable yang sama dengan halaman home dan katalog.</p>
+                </div>
+                <div class="book-grid" data-related-grid></div>
+            </section>
+        </main>
+    </div>
+
+    <div class="auth-modal" data-auth-modal hidden>
+        <div class="auth-modal__backdrop" data-close-login></div>
+        <div class="auth-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="login-title">
+            <div class="auth-modal__header">
+                <div>
+                    <p class="section-kicker">Account Access</p>
+                    <h2 class="auth-modal__title" id="login-title">Masuk ke LibrAspire</h2>
+                </div>
+                <button class="icon-button" type="button" aria-label="Tutup login" data-close-login>&times;</button>
+            </div>
+            <p class="section-text">Masuk untuk meminjam buku, menyimpan progres, dan mengirim pesan dengan lebih cepat.</p>
+            <p class="mode-hint mode-hint--modal" data-auth-mode-note></p>
+            <form class="auth-form" data-login-form novalidate>
+                <div class="form-field">
+                    <label class="form-label" for="login-name">Nama</label>
+                    <input class="form-input" type="text" id="login-name" name="loginName" placeholder="Nama lengkap" autocomplete="name">
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="login-email">Email</label>
+                    <input class="form-input" type="email" id="login-email" name="loginEmail" placeholder="nama@email.com" autocomplete="email" required>
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="login-password">Password</label>
+                    <input class="form-input" type="password" id="login-password" name="loginPassword" placeholder="Minimal 6 karakter" autocomplete="current-password" required>
+                </div>
+                <div class="auth-form__actions">
+                    <button class="primary-button" type="submit">Login</button>
+                    <button class="secondary-button secondary-button--surface" type="button" data-register-submit>Buat Akun</button>
+                </div>
+                <p class="auth-note">Isi nama, email, dan password untuk membuat akun baru jika belum terdaftar.</p>
+                <p class="form-feedback" data-login-feedback hidden></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
