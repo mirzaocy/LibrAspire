@@ -34,7 +34,7 @@ Project ini sudah diuji dengan `Node.js v22.22.2`.
 ### 1. Clone repository
 
 ```bash
-git clone <URL-REPOSITORY-KAMU>
+git clone https://github.com/mirzaocy/LibrAspire
 ```
 
 ### 2. Masuk ke folder project
