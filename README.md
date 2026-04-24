@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LibrAspire – Aplikasi Perpustakaan Digital
 
-## Getting Started
+LibrAspire adalah aplikasi web perpustakaan digital yang dibangun dengan React.js dan Next.js (App Router). Aplikasi ini memungkinkan pengguna mencari buku, melihat detail, menyimpan ke rak baca pribadi, dan banyak lagi. Data buku diambil dari Open Library API secara real-time.
 
-First, run the development server:
+## Anggota Kelompok
+1. Muhammad Mirza Al Farrosy
+2. Naufal Aushoof
+3. Lay Genda Surya Putra
+4. Raffa Samdya
+5. Muhammad Rifqi Darmawan
 
+# Fitur-Fitur
+- 🔐 Login & Register User
+- 📖 Peminjaman Buku
+- 🔎 Pencarian & Filter Buku
+- ⭐ Rating & Review Buku
+- 🔔 Notifikasi Pengguna
+
+# Cara Menjalankan Proyek
+1. Clone Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/username/libraspire.git
+```
+2. Install Dependencies
+```bash
+pnpm install
+```
+3. Buat file .env.local di root proyek, isi dengan:
+```bash
+NEXT_PUBLIC_OPEN_LIBRARY_API_URL=https://openlibrary.org
+```
+4. Jalankan server development
+```bash
+pnpm run dev
+```
+5. Buka browser di http://localhost:3000
+
+# Struktur Folder(Relevan)
+```bash
+libraspire/
+├── src/
+│   ├── app/
+│   │   ├── books/[id]/page.js    # Halaman detail dinamis
+│   │   ├── my-shelf/page.js      # Rak baca
+│   │   ├── search/page.js        # Pencarian buku
+│   │   ├── layout.js             # Layout utama + Navbar
+│   │   └── page.js               # Beranda
+│   ├── components/
+│   │   ├── BookCard.jsx          # Kartu buku reusable
+│   │   ├── Navbar.jsx            # Komponen navigasi
+│   │   └── BorrowButton.jsx      # Tombol interaktif
+│   └── styles/globals.css
+├── public/placeholder.jpg        # Gambar cadangan cover
+├── .env.local                    # Environment variables
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Screenshot
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Pengujian
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Kredit & Sumber Data
