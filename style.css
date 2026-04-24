@@ -511,6 +511,10 @@ a {
     min-height: 3.4em;
 }
 
+.book-rating-summary {
+    font-weight: 700;
+}
+
 .book-card__actions {
     display: flex;
     flex-wrap: wrap;
@@ -620,6 +624,15 @@ a {
     margin-top: 18px;
 }
 
+.review-layout__list {
+    display: grid;
+    gap: 16px;
+}
+
+.reminder-list {
+    margin-top: 18px;
+}
+
 .activity-item {
     display: grid;
     gap: 12px;
@@ -628,6 +641,31 @@ a {
     border: 1px solid var(--border);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(247, 242, 235, 0.92) 100%);
     box-shadow: 0 12px 24px rgba(24, 34, 48, 0.06);
+}
+
+.reminder-card {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 24px rgba(24, 34, 48, 0.06);
+}
+
+.reminder-card--success {
+    background: linear-gradient(180deg, rgba(231, 249, 239, 0.92) 0%, rgba(255, 255, 255, 0.94) 100%);
+}
+
+.reminder-card--warning {
+    background: linear-gradient(180deg, rgba(255, 243, 223, 0.94) 0%, rgba(255, 255, 255, 0.94) 100%);
+}
+
+.reminder-card--danger {
+    background: linear-gradient(180deg, rgba(255, 232, 230, 0.94) 0%, rgba(255, 255, 255, 0.94) 100%);
+}
+
+.reminder-card--accent {
+    background: linear-gradient(180deg, rgba(255, 244, 229, 0.94) 0%, rgba(255, 255, 255, 0.94) 100%);
 }
 
 .activity-item__head {
@@ -802,6 +840,103 @@ a {
     gap: 18px;
 }
 
+.my-library-guest {
+    margin-top: 18px;
+}
+
+.review-mini {
+    display: grid;
+    gap: 6px;
+    padding: 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(31, 92, 122, 0.1);
+    background: rgba(255, 255, 255, 0.82);
+}
+
+.review-mini__stars,
+.review-card__rating,
+.review-panel__stars {
+    margin: 0;
+    color: #d88915;
+    letter-spacing: 0.08em;
+    font-size: 1rem;
+}
+
+.review-mini__text {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.review-panel {
+    margin-top: 26px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+}
+
+.review-panel__title {
+    font-size: 1.5rem;
+}
+
+.review-panel__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 22px;
+    border: 1px solid rgba(31, 92, 122, 0.12);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(247, 242, 235, 0.92) 100%);
+}
+
+.review-panel__score {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--brand-deep);
+}
+
+.review-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.review-layout__form,
+.review-layout__list {
+    min-width: 0;
+}
+
+.review-form {
+    display: grid;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.84);
+}
+
+.review-form__footer {
+    display: grid;
+    gap: 10px;
+}
+
+.review-card {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(247, 242, 235, 0.92) 100%);
+    box-shadow: 0 12px 24px rgba(24, 34, 48, 0.06);
+}
+
+.review-card--owned {
+    border-color: rgba(31, 92, 122, 0.2);
+    background: linear-gradient(180deg, rgba(236, 247, 255, 0.95) 0%, rgba(255, 252, 247, 0.94) 100%);
+}
+
 .auth-modal {
     position: fixed;
     inset: 0;
@@ -974,7 +1109,8 @@ a {
 @media (max-width: 900px) {
     .hero-panel,
     .contact-layout,
-    .detail-layout {
+    .detail-layout,
+    .review-layout {
         grid-template-columns: 1fr;
     }
 
@@ -1015,7 +1151,8 @@ a {
     .search-row,
     .catalog-tools,
     .auth-form__actions,
-    .detail-actions {
+    .detail-actions,
+    .review-panel__summary {
         flex-direction: column;
         align-items: stretch;
     }

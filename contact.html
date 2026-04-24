@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LibrAspire | Contact</title>
+    <title>LibrAspire | Kontak</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-<body class="site-page contact-page" data-auth-mode="backend">
+<body class="site-page contact-page" data-auth-mode="server" data-api-base="">
     <div class="site-shell">
         <header class="site-header">
             <div class="site-header__top">
                 <div>
-                    <p class="site-eyebrow">Frontend Reading Space</p>
+                    <p class="site-eyebrow">Perpustakaan Digital</p>
                     <h1 class="site-title">LibrAspire</h1>
                 </div>
                 <div class="auth-actions" data-auth-panel>
                     <p class="auth-greeting" data-auth-greeting>Belum login</p>
-                    <button class="secondary-button auth-button" type="button" data-open-login>Login</button>
-                    <button class="secondary-button auth-button" type="button" data-logout hidden>Logout</button>
+                    <button class="secondary-button auth-button" type="button" data-open-login>Masuk</button>
+                    <button class="secondary-button auth-button" type="button" data-logout hidden>Keluar</button>
                 </div>
             </div>
             <nav class="site-nav" aria-label="Main navigation">
-                <a class="site-nav__link" href="home.html">Home</a>
-                <a class="site-nav__link" href="catalog.html">Catalog</a>
-                <a class="site-nav__link is-active" href="contact.html" aria-current="page">Contact</a>
+                <a class="site-nav__link" href="home.html">Beranda</a>
+                <a class="site-nav__link" href="catalog.html">Katalog</a>
+                <a class="site-nav__link" href="my-books.html">Buku Saya</a>
+                <a class="site-nav__link is-active" href="contact.html" aria-current="page">Kontak</a>
             </nav>
             <p class="site-tagline">
                 Hubungi tim LibrAspire untuk saran, bantuan akun, atau masukan tentang pengalaman membaca dan eksplorasi katalog.
@@ -35,9 +36,9 @@
         <main class="page-main contact-layout">
             <section class="panel">
                 <div class="section-heading">
-                    <p class="section-kicker">Reach Out</p>
-                    <h2 class="section-title">Contact Us</h2>
-                    <p class="section-text">Form ini mendukung draft otomatis, validasi input, dan pengisian nama/email otomatis setelah login.</p>
+                    <p class="section-kicker">Hubungi Kami</p>
+                    <h2 class="section-title">Pusat Bantuan LibrAspire</h2>
+                    <p class="section-text">Sampaikan pertanyaan, kendala, atau saran melalui form berikut. Nama dan email akan terisi lebih cepat setelah kamu masuk.</p>
                 </div>
 
                 <form class="contact-form" action="#" method="post" data-contact-form novalidate>
@@ -65,21 +66,21 @@
 
             <aside class="panel support-panel">
                 <div class="section-heading">
-                    <p class="section-kicker">Support Topics</p>
+                    <p class="section-kicker">Topik Bantuan</p>
                     <h2 class="section-title">Apa yang Bisa Dibantu?</h2>
                 </div>
                 <div class="support-grid">
                     <article class="support-card">
                         <h3 class="support-card__title">Akun dan login</h3>
-                        <p class="section-text">Bantuan registrasi, login, atau pengecekan mode backend dan mode lokal.</p>
+                        <p class="section-text">Bantuan pendaftaran anggota, login, atau kendala akses akun.</p>
                     </article>
                     <article class="support-card">
                         <h3 class="support-card__title">Peminjaman buku</h3>
-                        <p class="section-text">Laporan jika status borrow atau antrean terasa tidak sinkron di halaman tertentu.</p>
+                        <p class="section-text">Laporan jika status pinjam, pengembalian, atau antrean buku belum sesuai.</p>
                     </article>
                     <article class="support-card">
-                        <h3 class="support-card__title">Discovery API</h3>
-                        <p class="section-text">Masukan tentang hasil pencarian referensi eksternal dan tampilan loading/error.</p>
+                        <h3 class="support-card__title">Rekomendasi bacaan</h3>
+                        <p class="section-text">Masukan tentang hasil pencarian referensi tambahan atau judul yang ingin kamu lihat.</p>
                     </article>
                 </div>
                 <p class="section-text section-text-compact">
@@ -94,12 +95,12 @@
         <div class="auth-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="login-title">
             <div class="auth-modal__header">
                 <div>
-                    <p class="section-kicker">Account Access</p>
+                    <p class="section-kicker">Akun Anggota</p>
                     <h2 class="auth-modal__title" id="login-title">Masuk ke LibrAspire</h2>
                 </div>
                 <button class="icon-button" type="button" aria-label="Tutup login" data-close-login>&times;</button>
             </div>
-            <p class="section-text">Masuk untuk meminjam buku, menyimpan progres, dan mengirim pesan dengan lebih cepat.</p>
+            <p class="section-text">Masuk untuk meminjam buku, melihat riwayat baca, dan menghubungi tim LibrAspire dengan lebih cepat.</p>
             <p class="mode-hint mode-hint--modal" data-auth-mode-note></p>
             <form class="auth-form" data-login-form novalidate>
                 <div class="form-field">
@@ -115,10 +116,10 @@
                     <input class="form-input" type="password" id="login-password" name="loginPassword" placeholder="Minimal 6 karakter" autocomplete="current-password" required>
                 </div>
                 <div class="auth-form__actions">
-                    <button class="primary-button" type="submit">Login</button>
+                    <button class="primary-button" type="submit">Masuk</button>
                     <button class="secondary-button secondary-button--surface" type="button" data-register-submit>Buat Akun</button>
                 </div>
-                <p class="auth-note">Isi nama, email, dan password untuk membuat akun baru jika belum terdaftar.</p>
+                <p class="auth-note">Isi nama, email, dan password untuk membuat akun anggota jika belum terdaftar.</p>
                 <p class="form-feedback" data-login-feedback hidden></p>
             </form>
         </div>

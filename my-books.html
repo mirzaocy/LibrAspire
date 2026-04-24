@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibrAspire | Buku Saya</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="site-page my-books-page" data-auth-mode="server" data-api-base="">
+    <div class="site-shell">
+        <header class="site-header">
+            <div class="site-header__top">
+                <div>
+                    <p class="site-eyebrow">Perpustakaan Digital</p>
+                    <h1 class="site-title">LibrAspire</h1>
+                </div>
+                <div class="auth-actions" data-auth-panel>
+                    <p class="auth-greeting" data-auth-greeting>Belum login</p>
+                    <button class="secondary-button auth-button" type="button" data-open-login>Masuk</button>
+                    <button class="secondary-button auth-button" type="button" data-logout hidden>Keluar</button>
+                </div>
+            </div>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a class="site-nav__link" href="home.html">Beranda</a>
+                <a class="site-nav__link" href="catalog.html">Katalog</a>
+                <a class="site-nav__link is-active" href="my-books.html" aria-current="page">Buku Saya</a>
+                <a class="site-nav__link" href="contact.html">Kontak</a>
+            </nav>
+            <p class="site-tagline">
+                Kelola buku yang sedang dipinjam, pantau antrean, lihat pengingat pribadi, dan buka kembali ulasanmu
+                dari satu halaman yang sama.
+            </p>
+            <p class="mode-hint" data-auth-mode-note></p>
+        </header>
+
+        <main class="page-main">
+            <section class="panel">
+                <div class="section-heading">
+                    <p class="section-kicker">Rak Pribadi</p>
+                    <h2 class="section-title">Status Bacaan Saya</h2>
+                    <p class="section-text">Halaman ini merangkum pinjaman aktif, antrean, dan buku yang sudah kamu ulas.</p>
+                </div>
+
+                <div class="metric-grid metric-grid--library">
+                    <article class="metric-card">
+                        <strong data-stat-borrowed-books>0</strong>
+                        <span>Buku yang sedang dipinjam</span>
+                    </article>
+                    <article class="metric-card">
+                        <strong data-stat-waiting-books>0</strong>
+                        <span>Buku yang sedang diantrikan</span>
+                    </article>
+                    <article class="metric-card">
+                        <strong data-stat-reviewed-books>0</strong>
+                        <span>Buku yang sudah kamu ulas</span>
+                    </article>
+                </div>
+
+                <p class="catalog-summary" data-my-library-summary>Masuk untuk membuka rak pribadi dan aktivitas bacaanmu.</p>
+                <div class="activity-empty my-library-guest" data-my-library-guest hidden>
+                    Gunakan tombol Masuk di bagian atas untuk melihat buku yang sedang dipinjam, antrean aktif, dan ulasan pribadimu.
+                </div>
+
+                <div class="catalog-tools">
+                    <div class="filter-group" role="group" aria-label="Filter rak pribadi">
+                        <button class="filter-chip is-selected" type="button" data-library-filter="all">Semua</button>
+                        <button class="filter-chip" type="button" data-library-filter="borrowed">Dipinjam</button>
+                        <button class="filter-chip" type="button" data-library-filter="waiting">Antrean</button>
+                        <button class="filter-chip" type="button" data-library-filter="reviewed">Diulas</button>
+                    </div>
+                </div>
+
+                <div class="book-grid" data-my-library-grid></div>
+                <p class="catalog-empty" data-my-library-empty hidden>Tidak ada buku yang cocok dengan filter saat ini.</p>
+            </section>
+
+            <section class="panel">
+                <div class="section-heading">
+                    <p class="section-kicker">Pengingat</p>
+                    <h2 class="section-title">Reminder dan Notifikasi</h2>
+                    <p class="section-text">Lihat pengingat pengembalian, status antrean, dan catatan singkat untuk buku yang perlu kamu cek lagi.</p>
+                </div>
+                <p class="catalog-summary" data-reminder-summary>Belum ada notifikasi pribadi untuk ditampilkan.</p>
+                <div class="activity-list reminder-list" data-reminder-list></div>
+            </section>
+        </main>
+    </div>
+
+    <div class="auth-modal" data-auth-modal hidden>
+        <div class="auth-modal__backdrop" data-close-login></div>
+        <div class="auth-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="login-title">
+            <div class="auth-modal__header">
+                <div>
+                    <p class="section-kicker">Akun Anggota</p>
+                    <h2 class="auth-modal__title" id="login-title">Masuk ke LibrAspire</h2>
+                </div>
+                <button class="icon-button" type="button" aria-label="Tutup login" data-close-login>&times;</button>
+            </div>
+            <p class="section-text">Masuk untuk meminjam buku, melihat riwayat baca, dan menghubungi tim LibrAspire dengan lebih cepat.</p>
+            <p class="mode-hint mode-hint--modal" data-auth-mode-note></p>
+            <form class="auth-form" data-login-form novalidate>
+                <div class="form-field">
+                    <label class="form-label" for="login-name">Nama</label>
+                    <input class="form-input" type="text" id="login-name" name="loginName" placeholder="Nama lengkap" autocomplete="name">
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="login-email">Email</label>
+                    <input class="form-input" type="email" id="login-email" name="loginEmail" placeholder="nama@email.com" autocomplete="email" required>
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="login-password">Password</label>
+                    <input class="form-input" type="password" id="login-password" name="loginPassword" placeholder="Minimal 6 karakter" autocomplete="current-password" required>
+                </div>
+                <div class="auth-form__actions">
+                    <button class="primary-button" type="submit">Masuk</button>
+                    <button class="secondary-button secondary-button--surface" type="button" data-register-submit>Buat Akun</button>
+                </div>
+                <p class="auth-note">Isi nama, email, dan password untuk membuat akun anggota jika belum terdaftar.</p>
+                <p class="form-feedback" data-login-feedback hidden></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+[
+  {
+    "name": "aaa",
+    "email": "aaaa@gmail.com",
+    "salt": "0530d551572b1f5bc83bc487dd035d6c",
+    "passwordHash": "213c35f1dd1a98202628544ada9202e8a2ace1da9f130f2a9193610fb33f1083",
+    "createdAt": "2026-04-24T16:14:21.155Z"
+  }
+]
