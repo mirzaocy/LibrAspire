@@ -5,10 +5,7 @@ LibrAspire adalah aplikasi web perpustakaan digital yang dibangun dengan React.j
 
 ## Anggota Kelompok
 1. Muhammad Mirza Al Farrosy
-2. Naufal Aushoof
-3. Lay Genda Surya Putra
-4. Raffa Samdya Adabi Alana Irfandy
-5. Muhammad Rifqi Darmawan
+
 
 
 # Fitur-Fitur
